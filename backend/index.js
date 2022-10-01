@@ -8,6 +8,19 @@ app.use(express.json());
 //parse request of content-type - aplication www-form-urlencoded
 app.use(express.urlencoded({extended: true}));
 
+const db = require("./models");
+//normal use. Dont delete the database table
+db.sequelize.sync();
+
+//In development, you may need to drop the existing tables and re-sync database
+
+/*
+db.sequelize.sync({force: true}).then(() -> {  //ESTO DA ERROR, PREGUNTAR O.O
+   console.log("Drop and resync db.");         //                          -
+)};
+*/
+
+
 //simple route
 app.get("/", (req, res)=>{
     res.json({message: "welcome to Music application"});
