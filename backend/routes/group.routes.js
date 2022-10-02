@@ -13,7 +13,7 @@ module.exports = app => {
     router.get("/:id", groups.findOne);
 
     //update a group with id
-    router.get("/:id", groups.findOne);
+    router.put("/:id", groups.update);
 
     //Delete a group with id
     router.delete("/:id", groups.delete);

@@ -105,7 +105,7 @@ exports.delete = (req, res)=>{
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "Group was deleted successfully!"
         });
       } else {
         res.send({
