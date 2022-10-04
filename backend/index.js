@@ -10,15 +10,15 @@ app.use(express.urlencoded({extended: true}));
 
 const db = require("./models");
 //normal use. Dont delete the database table
-//db.sequelize.sync();
+db.sequelize.sync();
 
 //In development, you may need to drop the existing tables and re-sync database
 
-
+/*
 db.sequelize.sync({force: true}).then(() => {  
    console.log("Drop and resync db.");                                   
 });
-
+*/
 
 //simple route
 app.get("/", (req, res)=>{

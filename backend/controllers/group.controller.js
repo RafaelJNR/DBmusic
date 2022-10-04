@@ -50,7 +50,7 @@ exports.findAll =(req, res)=>{
 exports.findOne = (req, res)=>{
     const id = req.params.id;
 
-    Group.findOne(id)
+    Group.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
@@ -61,6 +61,7 @@ exports.findOne = (req, res)=>{
       }
     })
     .catch(err => {
+      console.log(err);
       res.status(500).send({
         message: "Error retrieving Group with id=" + id
       });
